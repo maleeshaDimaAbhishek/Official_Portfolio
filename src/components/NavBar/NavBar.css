@@ -89,6 +89,9 @@
 }
 
 .anchor-link {
+    min-width: 250px;  /* Minimum width for click area */
+    min-height: 40px;
+    display: inline-block;
     text-decoration: none;
     color: white;
     transition: color 0.3s ease;
@@ -304,9 +307,13 @@
 
 /* Animations */
 @keyframes slideInFromLeft {
-    to {
+    0% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Slide to original position */
     }
 }
 
@@ -316,9 +323,9 @@
 .anchor-link:focus,
 .nav-connect:focus,
 .logo:focus {
-    outline: 2px solid #DF8908;
-    outline-offset: 2px;
-    border-radius: 4px;
+    outline: 2px;
+    outline-offset: 4px;
+    border: none;
 }
 
 /* Smooth scrolling */
