@@ -89,8 +89,6 @@
 }
 
 .anchor-link {
-    min-width: 250px;  /* Minimum width for click area */
-    min-height: 40px;
     display: inline-block;
     text-decoration: none;
     color: white;
