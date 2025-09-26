@@ -12,8 +12,8 @@ const NavbAr = () => {
   const overlayRef = useRef();
 
   const openMenu = () => {
-    if (menuRef.current) {
-      menuRef.current.style.right = "0";
+    if (!isMobileMenuOpen && menuRef.current) {
+      menuRef.current.classList.add('open');
       setIsMobileMenuOpen(true);
       // Prevent body scroll
       document.body.style.overflow = 'hidden';
@@ -22,7 +22,7 @@ const NavbAr = () => {
 
   const closeMenu = () => {
     if (menuRef.current) {
-      menuRef.current.style.right = "-350px";
+      menuRef.current.classList.remove('open');
       setIsMobileMenuOpen(false);
       // Restore body scroll
       document.body.style.overflow = 'unset';
@@ -92,6 +92,7 @@ const NavbAr = () => {
           className='nav-mob-open'
           role="button"
           tabIndex={0}
+          aria-label="Open mobile menu"
           onKeyDown={(e) => e.key === 'Enter' && openMenu()}
         />
         
@@ -103,6 +104,7 @@ const NavbAr = () => {
             className="nav-mob-close"
             role="button"
             tabIndex={0}
+            aria-label="Close mobile menu"
             onKeyDown={(e) => e.key === 'Enter' && closeMenu()}
           />
           
@@ -165,4 +167,4 @@ const NavbAr = () => {
   )
 }
 
-export default NavbAr
+export default NavbAr;
