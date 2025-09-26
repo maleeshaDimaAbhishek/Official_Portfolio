@@ -1,0 +1,101 @@
+.navbar{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 170px;
+}
+.logo {
+    font-family: 'Outfit', sans-serif; /* Use your preferred font */
+    font-size: 70px; /* Adjust the font size */
+    font-weight: 700; /* Make the font bold */
+    background: linear-gradient(270deg, #DF8908 20%, #B415FF 100%); /* Gradient color */
+    background-clip: text; /* Apply the gradient to the text */
+    -webkit-background-clip: text; /* For Safari */
+    -webkit-text-fill-color: transparent; /* Make the text color transparent to show the gradient */
+    text-align: center; /* Center the text */
+    letter-spacing: 2px; /* Add spacing between letters */
+    padding: 10px 0; /* Add padding around the logo */
+}
+.logo:hover{
+    cursor: pointer;
+    color: #ff6b6b;
+    transform: scale(1.05);
+    text-shadow: 0 5px 15px rgba(255, 107, 107, 0.3);
+}
+.navmenu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 18px;
+}
+.nav-connect{
+    padding: 15px 35px;
+    border-radius: 50px;
+    background: linear-gradient(267deg,#DA7C25 0.36%,#B923E1 102.06%);
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.nav-connect:hover{
+    transform: scale(1.05);
+}
+.navmenu li{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+.navmenu li img{
+    display: flex;
+    margin: auto;
+}
+.anchor-link{
+    text-decoration: none;
+    color: white;
+}
+.nav-mob-close{
+    display: none;
+}
+.nav-mob-open{
+    display: none;
+}
+@media(max-width:768px){
+    .navbar{
+        margin: 20px 50px;
+    }
+    .nav-connect{
+        display: none;
+    }
+    .nav-mob-open{
+        display: block;
+        position: fixed;
+        right: 30px;
+    }
+    .nav-mob-close{
+        display: block;
+        position: relative;
+        top: 30px;
+        left: 290px;
+        width: 30px;
+    }
+    .navmenu{
+        position: fixed;
+        flex-direction: column;
+        align-items: start;
+        top: 0;
+        gap: 30px;
+        background-color: #1F0016;
+        width: 350px;
+        height: 100%;
+        z-index: 2;
+        transition: right 0.5s;
+        right: -350px;
+    }
+    .navmenu li{
+        font-size: 30px;
+        padding-left: 100px;
+        flex-direction: row;
+        gap: 20px;
+    }
+}
